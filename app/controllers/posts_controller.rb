@@ -61,6 +61,6 @@ def post_params
 def find_post
     @post = Post.find(params[:id])
     end
-end
+
 
 
