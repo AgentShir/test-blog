@@ -25,13 +25,15 @@ end
 
 # Edit action retrieves the post and renders the edit page
 def edit
+    @post = Post.find(params[:id])
 end
 
 # Update action updates the post with new information
 def update
+    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
         flash[:notice] = "Successfully updated post!"
-        redirect_to post_path(@posts)
+        redirect_to post_path(find_post)
     else
         flash[:alert] = "Error updating post!"
         render :edit
@@ -44,6 +46,7 @@ end
 
 # The destroy action removes the post permanently from the database
 def destroy
+    @post = Post.find(params[:id])
     if @post.destroy
         flash[:notice] = "Successfully deleted post!"
         redirect_to posts_path
