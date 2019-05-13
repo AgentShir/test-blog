@@ -67,3 +67,6 @@ gem 'devise'
 # Image uploading for posts
 gem 'carrierwave'
 gem 'mini_magick'
+
+# Installing Scout gem
+gem 'scout_apm'
